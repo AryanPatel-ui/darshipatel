@@ -1,0 +1,1 @@
+import { useEffect } from 'react'; export default function useNavigation() { useEffect(() => { const nav = document.getElementById('main-nav'); const onScroll = () => nav?.classList.toggle('scrolled', scrollY > 60); addEventListener('scroll', onScroll); onScroll(); return () => removeEventListener('scroll', onScroll); }, []); }
