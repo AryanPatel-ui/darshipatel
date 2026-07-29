@@ -1,7 +1,7 @@
 import { useLocation } from 'react-router-dom';
 import Icon from '../Shared/Icon';
 import useCurtainNavigation from '../../hooks/useCurtainNavigation.jsx';
-const links = [['/', 'I. Opening'], ['/about', 'II. Prologue'], ['/journey', 'III. Journey'], ['/experience', 'IV. Repertoire'], ['/skills', 'V. Craft'], ['/social', 'VI. Backstage'], ['/contact', 'VII. Finale']];
+const links = [['/', 'I. Opening & Prologue'], ['/journey', 'II. Journey'], ['/experience', 'III. Repertoire'], ['/skills', 'IV. Craft'], ['/social', 'V. Backstage'], ['/contact', 'VI. Finale']];
 export default function Navbar() {
   const { pathname } = useLocation(); const { goTo } = useCurtainNavigation();
   const link = (to, className = '') => ({ href: to, className, onClick: e => { e.preventDefault(); goTo(to); } });
