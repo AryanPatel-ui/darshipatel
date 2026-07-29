@@ -4,7 +4,7 @@ import Icon from '../Shared/Icon';
 import NextChapter from '../Shared/NextChapter';
 import useCurtainNavigation from '../../hooks/useCurtainNavigation.jsx';
 const images = [
-  ['side', '/darshi-hero-1.png', 'Darshi Patel Outdoor Portrait'],
+  ['side', '/lollapalooza-india.jpg', 'Lollapalooza India Entrance'],
   ['center', '/darshi-portrait.jpg', 'Darshi Patel Graduation Portrait'],
   ['side', '/darshi-hero-3.jpg', 'Darshi Patel Cafe Portrait']
 ];
