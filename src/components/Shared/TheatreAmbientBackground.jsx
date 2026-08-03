@@ -4,6 +4,7 @@ export default function TheatreAmbientBackground() {
   const canvasRef = useRef(null);
 
   useEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return undefined;
     const canvas = canvasRef.current;
     if (!canvas) return undefined;
     const ctx = canvas.getContext('2d');

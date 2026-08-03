@@ -3,22 +3,34 @@ import { gsap } from 'gsap';
 
 export default function useLoader() {
   useLayoutEffect(() => {
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.body.classList.add('curtain-open');
+      const loader = document.getElementById('stage-loader');
+      if (loader) loader.style.display = 'none';
+      return undefined;
+    }
+
     const ctx = gsap.context(() => {
       const tl = gsap.timeline({ defaults: { ease: 'power3.inOut' } });
-      tl.to('#loader-content', { opacity: 0, scale: 0.9, duration: 0.6, delay: 0.6 })
+      tl.to('#loader-content', { opacity: 0, scale: 0.9, duration: 0.5, delay: 0.4 })
         .call(() => {
           document.body.classList.add('curtain-open');
         })
-        .to('#main-nav', { opacity: 1, duration: 0.8 }, '+=0.2')
-        .to('.hero-masks-badge', { opacity: 1, y: 0, duration: 0.7 }, '-=0.5')
-        .to('.hero-pre', { opacity: 1, y: 0, duration: 0.7 }, '-=0.5')
-        .to('.hero-title', { opacity: 1, y: 0, duration: 0.8 }, '-=0.5')
-        .to('.hero-tagline', { opacity: 1, y: 0, duration: 0.7 }, '-=0.6')
-        .to('.hero-images-showcase', { opacity: 1, y: 0, duration: 0.8 }, '-=0.5')
-        .to('.hero-cta-btn', { opacity: 1, y: 0, duration: 0.7 }, '-=0.6')
+        .to('#main-nav', { opacity: 1, duration: 0.6 }, '+=0.1')
+        .to('.hero-masks-badge, .hero-pre, .hero-title, .hero-tagline, .hero-images-showcase, .hero-cta-btn', {
+          opacity: 1,
+          y: 0,
+          duration: 0.7,
+          stagger: 0.08
+        }, '-=0.3')
         .set('#stage-loader', { display: 'none' });
     });
-    return () => ctx.revert();
+
+    return () => {
+      document.body.classList.add('curtain-open');
+      const loader = document.getElementById('stage-loader');
+      if (loader) loader.style.display = 'none';
+      ctx.revert();
+    };
   }, []);
 }
-
