@@ -23,8 +23,8 @@ export default function Journey() {
 
                 <div className="ticket-main-content">
                   <span className="ticket-stub-code">{num} • {tag}</span>
-                  <h3 className="ticket-vintage-title">{degree}</h3>
-                  <p className="ticket-institution">{institution}</p>
+                  <h3 className="ticket-vintage-title">{institution}</h3>
+                  <p className="ticket-degree">{degree}</p>
                 </div>
 
                 <div className="ticket-stars-row" aria-hidden="true">
