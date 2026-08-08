@@ -81,7 +81,7 @@ export default function Hero() {
           Darshi <span className="gold-text">Patel</span>
         </h1>
         <p className="hero-tagline">
-          Part pragmatic problem-solver, part creative director, I live and breathe event planning and experiential marketing. I aspire to build immersive brand narratives, live event dynamics, and scroll-stopping content that grab attention and hold onto it. With a knack for event planning and experiential marketing, I aspire to transform big ideas into seamless, crowd-connecting activations. From napkin sketch to live applause, I want to makes sure every moment hits the right note.
+          Part pragmatic problem-solver, part creative director, I live and breathe event planning and experiential marketing. I aspire to turn big ideas into immersive brand experiences, live event moments, and scroll-stopping content that truly connects with people. From a napkin sketch to live applause, I want to make sure every moment hits the right note.
         </p>
       </div>
 
